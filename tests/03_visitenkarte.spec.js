@@ -35,7 +35,7 @@ test('QA-Check: Portfolio-Projekte auf der Visitenkarte korrekt zählen', async 
 
   // 3. JETZT DER TRICK: suchen nach den Projektboxen, die NACH dieser h4-Überschrift kommen.
 
-  // Wir nutzen dafür das offizielle "The Project:"-Merkmal in Deinen Boxen.
+  // Wir nutzen dafür das offizielle "The Project:"-Merkmal in den Boxen.
 
   // Das "+" oder "~" im CSS-Locator sorgt dafür, dass nur Geschwister-Elemente gezählt werden.
 
