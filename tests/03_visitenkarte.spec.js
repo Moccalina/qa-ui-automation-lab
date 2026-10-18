@@ -4,7 +4,7 @@ test('Prüfen, ob das Portfolio-Projekt existiert', async ({ page }) => {
   // Startseite aufrufen
   await page.goto('https://qa-ui-automation.blogspot.com/2026/10/willkommen-in-meinem-qa-automation-lab.html');
 
-  // Wir suchen nach einem Text, der definitiv auf Deiner Startseite steht
+  // Wir suchen nach einem Text, der definitiv auf der Startseite steht
   const visitenkarteText = page.locator('text=Willkommen in meinem QA & Automation Lab!');
 
   // Prüfen, ob der Text sichtbar ist
