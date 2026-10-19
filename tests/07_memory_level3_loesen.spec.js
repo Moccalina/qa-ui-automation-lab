@@ -84,7 +84,7 @@ test('Memory-Spiel: Vollständige Level 3 User Journey bis zum Sieg', async ({ p
     await page.waitForTimeout(800);
   }
 
-  // STEP 5: FUNKTIONALER LOGIK-CHECK (Am Ende müssen 24 Paare gefunden sein)
+  // STEP 5: FUNKTIONALER LOGIK-CHECK (Am Ende müssen 48 Paare gefunden sein)
   await expect(page.getByText('48 / 48 Paare')).toBeVisible({ timeout: 5000 });
 
   console.log('🎉 Sensationell! Das komplette Spielfeld wurde fehlerfrei abgeräumt und verifiziert!');
