@@ -5,7 +5,7 @@ test('Memory-Spiel: Farbauswahl "Rot" in Level 5 validieren und bis zum Sieg spi
   test.setTimeout(120_000);
 
   // STEP 1: Seite aufrufen
-  await page.goto('https://qa-ui-automation.blogspot.com/p/color-pairs-5-level-game.html');
+ await page.goto('./');
 
   // STEP 2: Intro überspringen
   const startButton = page.locator('#intro-screen button');
