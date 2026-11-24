@@ -9,7 +9,7 @@ export default defineConfig({
   workers: 1,
   reporter: 'html',
   use: {
-    baseURL: 'https://github.io',
+    baseURL: 'https://moccalina.github.io/color-pairs-game/',
     trace: 'on-first-retry',
   },
   projects: [
