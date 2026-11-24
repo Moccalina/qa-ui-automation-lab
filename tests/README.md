@@ -2,34 +2,31 @@
 
 Herzlich willkommen in meinem QA-Automations-Labor! In diesem Repository befindet sich eine voll automatisierte **End-to-End (E2E) Testsuite**, die ich mit **Playwright (JavaScript)** für mein QA-Portfolio entwickelt habe.
 
-## 🔗 Live-Projekt
-Die getestete Anwendung ist live auf meinem Portfolio-Blog zu finden:
-👉 [Color Pairs Memory Game](https://qa-ui-automation.blogspot.com/p/color-pairs-5-level-game.html)
+## 🔗 Live-Projekt & Dokumentation
+* 🎮 **Getestete Webanwendung (GitHub Pages):** [Color Pairs Memory Game](https://github.io)
+* 📂 **Quellcode der Webanwendung:** [Moccalina/color-pairs-game](https://github.com)
+* 📝 **QA-Case-Study & Monitoring-Doku:** [QA UI Automation Blog](https://qa-ui-automation.blogspot.com/p/color-pairs-5-level-game.html)
 
 ---
 
 ## 🚀 Was wird getestet?
 
-Die Testsuite deckt die kritischen Kernbereiche der Webanwendung ab und ist in logische Testphasen unterteilt:
+Die Testsuite deckt die kritischen funktionalen Kernbereiche der Webanwendung ab und läuft automatisiert über **Desktop- (Chromium, Firefox, WebKit)** sowie **Mobile-Viewports (Mobile Chrome / Pixel 5)**:
 
-### 1. UI & Compliance-Tests
-*   **Layout & Responsivität:** Verifikation der Hauptelemente auf der Startseite.
-*   **Rechtliche Absicherung:** Überprüfung der Sichtbarkeit und Funktionalität von Impressum und Datenschutz.
-*   **Cookie-Banner-Interaktion:** Dynamisches Erkennen und Bestätigen des rechtlichen Cookie-Hinweises über stabile IDs.
-
-### 2. Funktionale Spielelogik (End-to-End)
-*   **User Journeys (Level 1 bis 5):** Vollautomatisches Durchspielen aller Schwierigkeitsgrade.
-*   **DOM-Analyse & Daten-Einzigartigkeit:** Der Test liest vorab verdeckte HTML-Attribute (`data-color`, `data-pair-label`) aus, um mathematisch zu beweisen, dass der Mischer-Algorithmus fehlerfreie, einzigartige Paare generiert.
-*   **Zustands- & Zähler-Verifikation:** Prüfung des Züge-Zählers (State-Management) nach validen Zügen.
-*   **Dynamische Klick-Journey:** Ein krisensicherer Klick-Algorithmus löst das Spielfeld vollautomatisch bis zur Siegesmeldung auf.
+### Funktionale Spielelogik (End-to-End)
+* **User Journeys (Level 1 bis 5):** Vollautomatisches Durchspielen aller Schwierigkeitsgrade (9 bis 96 Kartenpaare) inklusive Intro-Interaktion.
+* **DOM-Analyse & Daten-Einzigartigkeit:** Der Test liest vorab verdeckte HTML-Attribute (`data-color`, `data-pair-label`) aus, um mathematisch zu beweisen, dass der Mischer-Algorithmus fehlerfreie, einzigartige Paare generiert.
+* **Farbthemen- & Filter-Validierung:** Prüfung aller 7 Farbmodi (u. a. Rot-, Blau-, Grün- und Graustufen-Paletten) auf korrekte Farbraum-Zugehörigkeit.
+* **Zustands- & Zähler-Verifikation:** Prüfung des Züge-Zählers und Fortschrittsbalkens (State-Management) bis zur finalen Highscore-Speicherung (`localStorage`).
+* **Dynamische Klick-Journey:** Ein stabiler Klick-Algorithmus löst das Spielfeld vollautomatisch bis zum Erfolgs-Popup auf.
 
 ---
 
 ## 🛠️ Tech-Stack & Tools
-*   **Framework:** Playwright (E2E Testing Framework)
-*   **Sprache:** JavaScript (Node.js)
-*   **IDE:** Visual Studio Code
-*   **Version Control:** Git & GitHub
+* **Framework:** Playwright (E2E Testing Framework)
+* **CI/CD:** GitHub Actions (automatisierte Testläufe)
+* **Sprache:** JavaScript (Node.js)
+* **Version Control:** Git & GitHub
 
 ---
 
