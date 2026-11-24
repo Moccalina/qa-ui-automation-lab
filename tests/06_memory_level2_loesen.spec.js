@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 test('Memory-Spiel: Vollständige Level 2 User Journey bis zum Sieg', async ({ page }) => {
   // STEP 1: Seite aufrufen
-  await page.goto('https://qa-ui-automation.blogspot.com/p/color-pairs-5-level-game.html');
+  await page.goto('./');
 
   // STEP 2: Intro überspringen (Da dies die oberste Ebene ist, klappt der Klick sofort!)
   const startButton = page.locator('#intro-screen button');
