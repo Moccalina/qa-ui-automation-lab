@@ -2,19 +2,18 @@ const { test, expect } = require('@playwright/test');
 
 test.describe('Rechtliche Pflichtseiten (Footer & Navigation)', () => {
 
-  async function openMainScreen(page) {
+  async function openStartMenu(page) {
     await page.goto('./');
-    // Falls das Start-Intro-Overlay angezeigt wird, dieses zuerst schließen
-    const introButton = page.locator('#intro-overlay button, #start-intro-btn, .intro-modal button').first();
-    if (await introButton.isVisible({ timeout: 2000 }).catch(() => false)) {
-      await introButton.click();
+    const introBtn = page.locator('#intro-start-btn');
+    if (await introBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await introBtn.click();
     }
   }
 
   test('Impressum: Link im Footer sichtbar, anklickbar und Inhalt vorhanden', async ({ page }) => {
-    await openMainScreen(page);
+    await openStartMenu(page);
 
-    const impressumLink = page.locator('a[href*="impressum"]').first();
+    const impressumLink = page.locator('a[href*="impressum"]');
     await impressumLink.scrollIntoViewIfNeeded();
     await expect(impressumLink).toBeVisible();
 
@@ -26,15 +25,14 @@ test.describe('Rechtliche Pflichtseiten (Footer & Navigation)', () => {
     expect(bodyText.length).toBeGreaterThan(80);
 
     const backLink = page.locator('a').first();
-    await expect(backLink).toBeVisible();
     await backLink.click();
     await expect(page).toHaveURL(/\/color-pairs-game\/(index\.html)?$/);
   });
 
   test('Datenschutz: Link im Footer sichtbar, anklickbar und Inhalt vorhanden', async ({ page }) => {
-    await openMainScreen(page);
+    await openStartMenu(page);
 
-    const datenschutzLink = page.locator('a[href*="datenschutz"]').first();
+    const datenschutzLink = page.locator('a[href*="datenschutz"]');
     await datenschutzLink.scrollIntoViewIfNeeded();
     await expect(datenschutzLink).toBeVisible();
 
@@ -46,7 +44,6 @@ test.describe('Rechtliche Pflichtseiten (Footer & Navigation)', () => {
     expect(bodyText.length).toBeGreaterThan(150);
 
     const backLink = page.locator('a').first();
-    await expect(backLink).toBeVisible();
     await backLink.click();
     await expect(page).toHaveURL(/\/color-pairs-game\/(index\.html)?$/);
   });
